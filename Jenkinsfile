@@ -3,7 +3,7 @@ node{
 
   {
 
-git branch: 'master',  url: ''
+git branch: 'master',  url: 'https://github.com/chaithrashankarappa/test2.git'
 
   }
 
