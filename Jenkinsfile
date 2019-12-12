@@ -1,12 +1,23 @@
-node{
+pipeline {
+    agent any
+    tools {
+        maven 'M3'
+    }
   
-  stage('SCM Checkout')
-  {
-    git 'https://github.com/chaithrashankarappa/test2.git'
-  }
-  stage('compile package')
-  {
-    def mvnHome = tool name: 'M3', type: 'maven'
-    sh "${mvnHome}"
-  }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+
+        stage ('Build') {
+            steps {
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
+        }
+    }
 }
