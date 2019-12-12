@@ -1,8 +1,26 @@
 node{
-   stage('SCM Checkout'){
-    git 'https://github.com/chaithrashankarappa/test2/blob/master/jenkinsfile'
-    }
-    stage('compile-package){
-    sh 'mvn package'
-    }
-    }
+  stage('Checkout')
+
+  {
+
+git branch: 'master',  url: ''
+
+  }
+
+  stage('Build')
+
+     {
+
+         echo "Build the code"
+
+     }
+
+     stage('Test')
+
+     {
+
+         echo "Test the code"
+
+     }
+
+}
