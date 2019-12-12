@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-    git 'https://github.com/javahometech/myapp'
+    git 'https://github.com/chaithrashankarappa/test2/blob/master/jenkinsfile'
     }
     stage('compile-package){
     sh 'mvn package'
