@@ -17,9 +17,9 @@ node{
 	     {
 	
 
-	         echo "Build the code"
+	        
          def mvnHome = tool name: ‘maven-3’, type: ‘maven’
-         sh “${mvnHome}”
+         sh “${mvnHome}/bin/apache-maven-3.6.3/apache-maven-3.6.3/Downloads"
 	
 
 	     }
