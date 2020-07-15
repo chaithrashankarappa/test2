@@ -1,37 +1,16 @@
-node{
-	  stage('Checkout')
-	
+pipeline {
+   agent any
 
-	  {
-	
+   tools {
+      maven "M3"
+   }
 
-	git branch: 'master',  url: 'https://github.com/chaithrashankarappa/test2.git'
-	
+   stages {
+      stage('Build') {
+         steps {
+     bat "mvn --version"
+         }
 
-	  }
-	
-
-	  stage('Build')
-	
-
-	     {
-	
-
-	         echo "Build the code"
-         def mvnHome = tool name: ‘m3’, type: ‘maven’
-         sh “${mvnHome}”
-	
-
-	     }
-	
-
-	     stage('Test')
-	
-
-	     {
-	
-
-	         echo "Test the code"
-	
-
-	     }
+         }
+   }
+}
