@@ -1,41 +1,16 @@
 node{
-	  stage('Checkout')
-	
-
-	  {
-	
-
-	git branch: 'master',  url: 'https://github.com/chaithrashankarappa/test2.git'
-	
-
-	  }
-	
-
-	  stage('Build')
-	
-
-	     {
-	
-
-	        
-         def mvnHome = tool name: 'M3', type: 'maven'
-         sh “${mvnHome}/bin/apache-maven-3.6.3/apache-maven-3.6.3/Downloads"
-	
-
-	     }
-	
-
-	     stage('Test')
-	
-
-	     {
-	
-
-	         echo "Test the code"
-	
-
-	     }
-	
-
-	}
+stage('Checkout')
+ {
+ git branch: 'master',  url: 'https://github.com/chaithrashankarappa/test2.git'
+ }
+ stage('Build')
+ {
+   def mvnHome = tool name: 'M3', type: 'maven'
+   sh “${mvnHome}/bin/apache-maven-3.6.3/apache-maven-3.6.3/Downloads"
+  }
+ stage('Test')
+ {
+ echo "Test the code"
+ }
+}
 
