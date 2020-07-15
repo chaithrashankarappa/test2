@@ -1,0 +1,24 @@
+node{
+	  stage('Checkout')
+	
+
+	  {
+	echo "enter into checkout stage"
+
+	git branch: 'master',  url: 'https://github.com/chaithrashankarappa/test2.git'
+	
+
+	  }
+ stage('Test')
+	
+
+	     {
+	
+
+	         echo "Test the code"
+	
+
+	     }
+	
+
+	}
